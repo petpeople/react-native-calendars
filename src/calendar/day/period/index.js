@@ -56,13 +56,17 @@ class Day extends Component {
   }
 
   getDrawingStyle(marking) {
-    const defaultStyle = {textStyle: {}};
+    const defaultStyle = {
+      textStyle: {},
+      containerStyle: {}
+    };
     if (!marking) {
       return defaultStyle;
     }
     if (marking.disabled) {
       defaultStyle.textStyle.color = this.theme.textDisabledColor;
     } else if (marking.selected) {
+      defaultStyle.containerStyle.backgroundColor = '#5FCAF2'
       defaultStyle.textStyle.color = this.theme.selectedDayTextColor;
     }
     const resultStyle = ([marking]).reduce((prev, next) => {
@@ -129,7 +133,7 @@ class Day extends Component {
 
     if (this.props.marking) {
       containerStyle.push({
-        borderRadius: 17
+        borderRadius: 20
       });
 
       const flags = this.markingStyle;
@@ -154,8 +158,11 @@ class Day extends Component {
           backgroundColor: flags.startingDay.color
         };
         containerStyle.push({
-          backgroundColor: flags.startingDay.color
+          backgroundColor: '#5FCAF2'
         });
+        textStyle.push({
+          color: '#FFFFFF'
+        })
       } else if (flags.endingDay && !flags.startingDay) {
         rightFillerStyle = {
           backgroundColor: this.theme.calendarBackground
@@ -164,8 +171,11 @@ class Day extends Component {
           backgroundColor: flags.endingDay.color
         };
         containerStyle.push({
-          backgroundColor: flags.endingDay.color
+          backgroundColor: '#5FCAF2'
         });
+        textStyle.push({
+          color: '#FFFFFF'
+        })
       } else if (flags.day) {
         leftFillerStyle = {backgroundColor: flags.day.color};
         rightFillerStyle = {backgroundColor: flags.day.color};
