@@ -164,11 +164,11 @@ class CalendarList extends Component {
     for (let i = 0; i < rowclone.length; i++) {
       let val = rowclone[i];
       const rowShouldBeRendered = rowIsCloseToViewable(i, 1);
-      if (rowShouldBeRendered && !rowclone[i].getTime) {
-        val = this.state.openDate.clone().addMonths(i - this.props.pastScrollRange, true);
-      } else if (!rowShouldBeRendered) {
-        val = this.state.texts[i];
-      }
+      // if (rowShouldBeRendered && !rowclone[i].getTime) {
+      val = this.state.openDate.clone().addMonths(i - this.props.pastScrollRange, true);
+      // } else if (!rowShouldBeRendered) {
+      //   val = this.state.texts[i];
+      // }
       newrows.push(val);
       if (rowIsCloseToViewable(i, 0)) {
         visibleMonths.push(xdateToData(val));
@@ -216,8 +216,8 @@ class CalendarList extends Component {
         showsHorizontalScrollIndicator={this.props.showScrollIndicator}
         scrollEnabled={this.props.scrollingEnabled}
         keyExtractor={(item, index) => String(index)}
-        initialScrollIndex={this.state.openDate ? this.getMonthIndex(this.state.openDate) : false}
-        getItemLayout={this.getItemLayout}
+        // initialScrollIndex={this.state.openDate ? this.getMonthIndex(this.state.openDate) : false}
+        // getItemLayout={this.getItemLayout}
         scrollsToTop={this.props.scrollsToTop}
       />
     );
