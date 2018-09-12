@@ -66,7 +66,8 @@ class Day extends Component {
     if (marking.disabled) {
       defaultStyle.textStyle.color = this.theme.textDisabledColor;
     } else if (marking.selected) {
-      defaultStyle.containerStyle.backgroundColor = '#5FCAF2'
+      defaultStyle.containerStyle.backgroundColor = '#5FCAF2';
+      defaultStyle.containerStyle.borderColor = '#5FCAF2';
       defaultStyle.textStyle.color = this.theme.selectedDayTextColor;
     }
     const resultStyle = ([marking]).reduce((prev, next) => {
@@ -158,7 +159,8 @@ class Day extends Component {
           backgroundColor: flags.startingDay.color
         };
         containerStyle.push({
-          backgroundColor: '#5FCAF2'
+          backgroundColor: '#5FCAF2',
+          borderColor: '#5FCAF2'
         });
         textStyle.push({
           color: '#FFFFFF'
@@ -171,7 +173,8 @@ class Day extends Component {
           backgroundColor: flags.endingDay.color
         };
         containerStyle.push({
-          backgroundColor: '#5FCAF2'
+          backgroundColor: '#5FCAF2',
+          borderColor: '#5FCAF2'
         });
         textStyle.push({
           color: '#FFFFFF'
