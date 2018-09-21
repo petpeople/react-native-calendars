@@ -67,6 +67,7 @@ class Day extends Component {
       defaultStyle.textStyle.color = this.theme.textDisabledColor;
     } else if (marking.selected) {
       defaultStyle.containerStyle.backgroundColor = '#5FCAF2';
+      defaultStyle.containerStyle.borderWidth = 1;
       defaultStyle.containerStyle.borderColor = '#5FCAF2';
       defaultStyle.textStyle.color = this.theme.selectedDayTextColor;
     }
@@ -160,6 +161,7 @@ class Day extends Component {
         };
         containerStyle.push({
           backgroundColor: '#5FCAF2',
+          borderWidth: 1,
           borderColor: '#5FCAF2'
         });
         textStyle.push({
@@ -174,6 +176,7 @@ class Day extends Component {
         };
         containerStyle.push({
           backgroundColor: '#5FCAF2',
+          borderWidth: 1,
           borderColor: '#5FCAF2'
         });
         textStyle.push({
