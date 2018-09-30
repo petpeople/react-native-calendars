@@ -159,9 +159,9 @@ class Calendar extends Component {
     let state = '';
     if (this.props.disabledByDefault) {
       state = 'disabled';
-    } else if ((minDate && !dateutils.isGTE(day, minDate)) || (maxDate && !dateutils.isLTE(day, maxDate))) {
-      state = 'disabled';
     } else if (!dateutils.sameMonth(day, this.state.currentMonth)) {
+      state = 'empty';
+    } else if ((minDate && !dateutils.isGTE(day, minDate)) || (maxDate && !dateutils.isLTE(day, maxDate))) {
       state = 'disabled';
     } else if (dateutils.sameDate(day, XDate())) {
       state = 'today';
@@ -183,7 +183,7 @@ class Calendar extends Component {
           theme={this.props.theme}
           onPress={this.pressDay}
           onLongPress={this.longPressDay}
-          date={xdateToData(day)}
+          date={!dateutils.sameMonth(day, this.state.currentMonth) ? { currentYear: day.getFullYear(), month: day.getMonth() + 1, currentMonth: this.state.currentMonth.getMonth() + 1 } : xdateToData(day)}
           marking={this.getDateMarking(day)}
         >
           {date}
