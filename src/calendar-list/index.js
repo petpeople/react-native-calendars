@@ -74,7 +74,7 @@ class CalendarList extends Component {
       if (this.props.pastScrollRange - 1 <= i && i <= this.props.pastScrollRange + 1 || !this.props.pastScrollRange && i <= this.props.pastScrollRange + 2) {
         rows.push(rangeDate);
       } else {
-        rows.push(rangeDateStr);
+        rows.push(rangeDate);
       }
     }
 
@@ -210,7 +210,7 @@ class CalendarList extends Component {
         pageSize={1}
         horizontal={this.props.horizontal}
         pagingEnabled={this.props.pagingEnabled}
-        onViewableItemsChanged={this.onViewableItemsChangedBound}
+        // onViewableItemsChanged={this.onViewableItemsChangedBound}
         renderItem={this.renderCalendarBound}
         showsVerticalScrollIndicator={this.props.showScrollIndicator}
         showsHorizontalScrollIndicator={this.props.showScrollIndicator}
