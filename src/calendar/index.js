@@ -183,7 +183,7 @@ class Calendar extends Component {
           theme={this.props.theme}
           onPress={this.pressDay}
           onLongPress={this.longPressDay}
-          date={!dateutils.sameMonth(day, this.state.currentMonth) ? { currentYear: day.getFullYear(), month: day.getMonth() + 1, currentMonth: this.state.currentMonth.getMonth() + 1 } : xdateToData(day)}
+          date={!dateutils.sameMonth(day, this.state.currentMonth) ? { currentYear: day.getFullYear(), month: day.getMonth() + 1, currentMonth: this.state.currentMonth.getMonth() + 1, dateString: day.toString('yyyy-MM-dd') } : xdateToData(day)}
           marking={this.getDateMarking(day)}
         >
           {date}
